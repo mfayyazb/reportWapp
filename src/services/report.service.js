@@ -45,3 +45,19 @@ export const getReport = async (req, res) => {
     });
   }
 };
+
+
+export const getAllReport = async (req, res) => {
+  try {
+    const tasks = await Report.find({});
+    
+    if(!tasks){
+        return res.status(404).json({ success: false, msg: 'No tasks found' })
+    }
+    res.status(200).json({ success: true, tasks })
+} catch (error) {
+    res.status(500).json({ success: false, msg: 'Server Error' })
+}
+
+
+}

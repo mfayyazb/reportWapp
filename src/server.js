@@ -15,3 +15,10 @@ app.get("/", async (req, res) => {
 app.listen(appPort, () => {
   console.log(`Example app listening on port ${appPort}`);
 });
+
+//********************************************************/
+// app.listen(appPort, () => {
+//   app.listen(8000)
+//   console.log('Server is running on port 8000');
+// });
+
