@@ -59,5 +59,4 @@ export const getAllReport = async (req, res) => {
     res.status(500).json({ success: false, msg: 'Server Error' })
 }
 
-
-}
+};
