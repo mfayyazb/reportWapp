@@ -1,9 +1,15 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
+import envConfig from './envconfig.mjs';
 
-dotenv.config();
-const dbUrl = process.env.DB_URL;
+//const add = require('./envconfig.js').default;
 
+
+console.log('appEnvConfig.DB_URL:',envConfig.DB_URL);
+// dotenv.config();
+const dbUrl = envConfig.DB_URL;
+
+console.log
 main().catch((err) => console.log(err));
 
 async function main() {

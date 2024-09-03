@@ -1,5 +1,10 @@
 {
   "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:staging": "set NODE_ENV=staging & node src/server.js",
+    "start:production": "set NODE_ENV=production & node src/server.js"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -9,6 +14,7 @@
     "mongoose": "^8.1.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "prettier": "3.3.3"
   }
 }
