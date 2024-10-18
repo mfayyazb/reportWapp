@@ -1,28 +1,32 @@
 import mongoose from "mongoose";
 
-const reportSchema = new mongoose.Schema({
-  date: {
-    type: Date,
-    required: true,
-  },
-  status: {
-    type: String,
-    required: true,
-    enum: {
-      values: ["ready", "doing", "stopped", "done", "check"],
-      message: "وضعیت وارد شده صحیح نمی باشد",
+export const ReportSchema = new mongoose.Schema({
+    date: {
+        type: Date,
+        required: true,
     },
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  userId: {
-    type: String,
-    required: true,
-  },
+    status: {
+        type: String,
+        required: true,
+        enum: {
+            values: ["perfect", "good", "notbad", "weak", "veryweak"],
+            message: "وضعیت وارد شده صحیح نمی باشد",
+        },
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    userId: {
+        type: String,
+        required: true,
+    },
+    chatRoomId: {
+        type: String,
+        required: true,
+    },
+
 });
 
-const Report = mongoose.model("Report", reportSchema);
+export const Report = mongoose.model("Report", ReportSchema);
 
-export default Report;

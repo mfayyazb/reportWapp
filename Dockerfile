@@ -12,8 +12,10 @@ RUN npm install
 
 # Bundle app source
 COPY src/ ./src/
-COPY src/.env.production ./src/
 
+#COPY src/.env.production ./src/
+
+RUN apk update && apk add busybox-extras && apk add wget
 
 EXPOSE 3231
 ENTRYPOINT [ "npm", "run", "start:production" ]
