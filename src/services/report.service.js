@@ -94,7 +94,7 @@ export const getAllReport = async (req, res) => {
         if (!reports) {
             return res.status(404).json({success: false, msg: 'No tasks found'})
         }
-        res.status(200).json({success: true, reports: reports})
+        res.status(200).json({success: true, data: reports})
 
     } catch (error) {
         res.status(500).json({success: false, msg: 'Server Error'})
